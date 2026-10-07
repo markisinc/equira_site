@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Equira | Tus finanzas, en equilibrio</title>
+<meta name="description" content="Equira te ayuda a entender tus gastos y tus inversiones, con explicaciones claras pensadas para la realidad argentina.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F3F5F2;
+    --ink: #1D2B2A;
+    --green: #2F6B5A;
+    --brass: #B8901F;
+    --muted: #56635F;
+    --line: #C9D1CD;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #142120;
+      --ink: #E8EEEA;
+      --green: #7FC1AC;
+      --brass: #D9B24A;
+      --muted: #A3B1AC;
+      --line: #33443F;
+    }
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Schibsted Grotesk", system-ui, sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.55;
+  }
+
+  main {
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: clamp(3.5rem, 12vh, 7.5rem) 1.25rem 3rem;
+  }
+
+  /* Hero: the wordmark resting on a balance beam */
+  .mark {
+    display: inline-block;
+    margin-bottom: 2.75rem;
+  }
+  h1 {
+    margin: 0;
+    font-size: clamp(3.75rem, 16vw, 6.5rem);
+    font-weight: 800;
+    letter-spacing: -0.035em;
+    line-height: 0.95;
+  }
+  .beam {
+    margin-top: 1rem;
+  }
+  .beam .bar {
+    height: 4px;
+    border-radius: 2px;
+    background: var(--ink);
+    transform-origin: 50% 50%;
+    animation: settle 1.6s cubic-bezier(.34, 1.36, .5, 1) .25s both;
+  }
+  .beam .fulcrum {
+    width: 0;
+    height: 0;
+    margin: 2px auto 0;
+    border-left: 11px solid transparent;
+    border-right: 11px solid transparent;
+    border-bottom: 18px solid var(--brass);
+  }
+  @keyframes settle {
+    from { transform: rotate(-7deg); }
+    to   { transform: rotate(0deg); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .beam .bar { animation: none; }
+  }
+
+  .tagline {
+    margin: 0 0 1.25rem;
+    font-size: clamp(1.6rem, 5.5vw, 2.25rem);
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+  }
+  .lead {
+    margin: 0;
+    color: var(--muted);
+    max-width: 34rem;
+  }
+
+  /* What it does */
+  .points {
+    list-style: none;
+    margin: 3.5rem 0 0;
+    padding: 0;
+    border-top: 1px solid var(--line);
+  }
+  .points li {
+    padding: 1.4rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .points h2 {
+    margin: 0 0 0.3rem;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--green);
+  }
+  .points p {
+    margin: 0;
+    color: var(--muted);
+  }
+
+  /* Contact */
+  .contact {
+    margin: 3.5rem 0 0;
+  }
+  .contact p { margin: 0 0 0.35rem; }
+  .contact .status { color: var(--muted); }
+  .contact a {
+    color: var(--ink);
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-color: var(--brass);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+  }
+  .contact a:hover { color: var(--green); }
+  a:focus-visible {
+    outline: 2px solid var(--green);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  footer {
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: 0 1.25rem 2.5rem;
+    font-size: 0.875rem;
+    color: var(--muted);
+  }
+</style>
+</head>
+<body>
+<main>
+  <div class="mark">
+    <h1>Equira</h1>
+    <div class="beam" aria-hidden="true">
+      <div class="bar"></div>
+      <div class="fulcrum"></div>
+    </div>
+  </div>
+
+  <p class="tagline">Tus finanzas, en equilibrio.</p>
+  <p class="lead">Equira te ayuda a entender tus gastos del día a día y tus inversiones, con explicaciones claras y pensadas para la realidad argentina.</p>
+
+  <ul class="points">
+    <li>
+      <h2>Tus gastos, claros</h2>
+      <p>Mirá en qué se va tu plata cada mes, sin planillas ni cuentas a mano.</p>
+    </li>
+    <li>
+      <h2>Tu cartera, en un solo lugar</h2>
+      <p>Seguí tus inversiones y entendé cómo y por qué se mueven.</p>
+    </li>
+    <li>
+      <h2>Aprendé mientras la usás</h2>
+      <p>Conceptos financieros explicados en lenguaje simple, justo cuando los necesitás.</p>
+    </li>
+  </ul>
+
+  <section class="contact">
+    <p class="status">Estamos construyendo Equira en Buenos Aires.</p>
+    <p>¿Querés saber más? Escribinos a <a href="mailto:john@equira.lat">john@equira.lat</a></p>
+  </section>
+</main>
+<footer>© 2026 Equira, Buenos Aires</footer>
+</body>
+</html>
