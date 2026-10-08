@@ -118,6 +118,92 @@
     color: var(--muted);
   }
 
+  /* Concept and what's built */
+  .story {
+    margin: 3.5rem 0 0;
+  }
+  .story h2 {
+    margin: 0 0 0.75rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+  }
+  .story p {
+    margin: 0 0 1rem;
+    color: var(--muted);
+  }
+  .built {
+    margin: 0 0 1rem;
+    padding: 0 0 0 1.25rem;
+    border-left: 3px solid var(--brass);
+    list-style: none;
+  }
+  .built li {
+    margin: 0 0 0.75rem;
+    color: var(--muted);
+  }
+  .built li:last-child { margin-bottom: 0; }
+  .built strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  /* Roadmap: a vertical track, each stage a weight on the beam */
+  .roadmap {
+    list-style: none;
+    margin: 1.5rem 0 0;
+    padding: 0;
+  }
+  .roadmap li {
+    position: relative;
+    padding: 0 0 1.75rem 2rem;
+  }
+  .roadmap li::before {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 0.5rem;
+    bottom: -0.5rem;
+    width: 2px;
+    background: var(--line);
+  }
+  .roadmap li:last-child { padding-bottom: 0; }
+  .roadmap li:last-child::before { display: none; }
+  .roadmap li::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.35rem;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid var(--muted);
+    background: var(--paper);
+  }
+  .roadmap li.done::after {
+    border-color: var(--green);
+    background: var(--green);
+  }
+  .roadmap li.now::after {
+    border-color: var(--brass);
+    background: var(--brass);
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--brass) 25%, transparent);
+  }
+  .roadmap .stage {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--muted);
+  }
+  .roadmap .now .stage { color: var(--brass); font-weight: 600; }
+  .roadmap .done .stage { color: var(--green); font-weight: 600; }
+  .roadmap h3 {
+    margin: 0.1rem 0 0.25rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+  }
+  .roadmap p { margin: 0; }
+
   /* Contact */
   .contact {
     margin: 3.5rem 0 0;
@@ -175,6 +261,54 @@
       <p>Conceptos financieros explicados en lenguaje simple, justo cuando los necesitás.</p>
     </li>
   </ul>
+
+  <section class="story">
+    <h2>La idea</h2>
+    <p>En Argentina, saber cuánto tenés no es simple: tus ahorros están en pesos, tus inversiones cotizan en dólares y el tipo de cambio cambia la foto todos los días. Equira junta todo en un solo lugar y te muestra dónde estás parado, en la moneda que te importa, para que puedas decidir con calma.</p>
+  </section>
+
+  <section class="story">
+    <h2>Lo que ya construimos</h2>
+    <p>Equira nace de Equilibria, una primera versión que desarrollamos durante 2026. De ese trabajo ya funcionan:</p>
+    <ul class="built">
+      <li><strong>Valuación en pesos y dólares.</strong> La cartera se valúa en ARS, en USD y al dólar CCL.</li>
+      <li><strong>Soporte para CEDEARs.</strong> Cada CEDEAR se calcula con su ratio de conversión respecto del activo subyacente.</li>
+      <li><strong>Registro de movimientos.</strong> Un libro de operaciones que lleva el historial de tu cartera.</li>
+      <li><strong>Datos privados por usuario.</strong> Cada persona accede solo a su propia información.</li>
+    </ul>
+  </section>
+
+  <section class="story">
+    <h2>Hoja de ruta</h2>
+    <p>Así vamos a construir Equira, de lo que ya existe a lo que viene.</p>
+    <ol class="roadmap">
+      <li class="done">
+        <span class="stage">Hecho</span>
+        <h3>Primera versión: Equilibria</h3>
+        <p>Valuación de cartera en pesos y dólares, CEDEARs y registro de movimientos.</p>
+      </li>
+      <li class="now" aria-current="step">
+        <span class="stage">En curso</span>
+        <h3>Reconstrucción como Equira</h3>
+        <p>Una base nueva, más simple y sólida, con lo aprendido en la primera versión.</p>
+      </li>
+      <li>
+        <span class="stage">Próximo</span>
+        <h3>Gastos del día a día</h3>
+        <p>Registrar y entender en qué se va la plata cada mes, junto a tus inversiones.</p>
+      </li>
+      <li>
+        <span class="stage">Próximo</span>
+        <h3>Educación financiera</h3>
+        <p>Explicaciones en lenguaje simple sobre tu propia cartera y los conceptos que aparecen en ella.</p>
+      </li>
+      <li>
+        <span class="stage">Más adelante</span>
+        <h3>Primeros usuarios en Argentina</h3>
+        <p>Una versión de prueba abierta a un grupo chico de usuarios para aprender con ellos.</p>
+      </li>
+    </ol>
+  </section>
 
   <section class="contact">
     <p class="status">Estamos construyendo Equira en Buenos Aires.</p>
